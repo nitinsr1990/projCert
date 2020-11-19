@@ -1,4 +1,4 @@
 FROM devopsedu/webapp
-COPY website/. /var/www/html/
-WORKDIR /var/www/html/
-CMD ["php","index.php"]
+ADD website /var/www/html/
+RUN rm /var/www/html/index.html
+CMD apachectl -D FOREGROUND
